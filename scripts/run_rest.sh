@@ -36,4 +36,5 @@ stage t4_optuna      "$R/task4/cgan_best_params.json"        scripts/task4_cgan.
 stage t4_train       "$C/task4_generator.pt"                 scripts/task4_cgan.py train --epochs ${GAN_EPOCHS:-60}
 stage t4_eval        "$R/task4/cgan_test_by_style.csv"       scripts/task4_cgan.py eval
 stage t4_export      "$M/task4_generator.onnx"               scripts/task4_cgan.py export
+stage samples "$O/samples/face_test_0000.png" scripts/export_samples.py
 echo "[$(date +%T)] ALL DONE"
