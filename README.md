@@ -18,8 +18,8 @@ All models are trained in PyTorch, tuned with **Optuna**, tracked with **MLflow*
 Requirements: Docker Desktop (or Docker Engine + Compose v2).
 
 ```bash
-git clone https://github.com/<your-username>/GenAI_Assignment1.git
-cd GenAI_Assignment1
+git clone https://github.com/eman06/GenAI-A1.git
+cd GenAI-A1
 # put the 7 ONNX files into ./models_onnx  (see "Model files" below)
 docker compose up --build
 ```
@@ -29,7 +29,7 @@ If those ports are busy, run `FRONTEND_PORT=8088 BACKEND_PORT=8010 docker compos
 
 ### Model files
 
-The trained ONNX models are not committed to git. Download `models_onnx.zip` from **<MODEL-DOWNLOAD-LINK>** and unzip it into `models_onnx/`:
+The trained ONNX models are not committed to git. Download `models_onnx.zip` from **https://github.com/eman06/GenAI-A1/releases/download/v1.0/models_onnx.zip** and unzip it into `models_onnx/`:
 
 ```
 models_onnx/
