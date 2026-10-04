@@ -1,0 +1,5 @@
+digraph G { rankdir=LR; node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, fillcolor="#e8f1fb"]; edge [fontname="Helvetica", fontsize=9];
+in [label="input x~", fillcolor="#fde8d8"]; clf [label="CNN classifier C\n4 VGG blocks + GAP\nsoftmax p in R^4", fillcolor="#fff3b0"]; r [label="r = argmax p", shape=diamond, fillcolor="#ffffff"];
+id [label="identity bypass\n(clean)"]; a1 [label="A_salt\nspecialist DAE"]; a2 [label="A_blur\nspecialist DAE"]; a3 [label="A_occ\nspecialist DAE"]; out [label="x^", fillcolor="#dff5e1"];
+in -> clf -> r; r -> id [label="clean"]; r -> a1 [label="salt"]; r -> a2 [label="blur"]; r -> a3 [label="occlusion"];
+in -> a1 [style=dotted]; id -> out; a1 -> out; a2 -> out; a3 -> out; }

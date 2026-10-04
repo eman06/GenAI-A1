@@ -1,0 +1,5 @@
+digraph G { rankdir=LR; node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, fillcolor="#e8f1fb"]; edge [fontname="Helvetica", fontsize=9];
+subgraph cluster_f { label="frontend container (nginx)"; style=rounded; ui [label="React + Tailwind SPA\n4 workspaces + System page"]; }
+subgraph cluster_b { label="backend container"; style=rounded; api [label="FastAPI\n/api/health /api/info\n/api/restore/{universal,hard,soft}\n/api/sketch /api/corrupt"]; corr [label="corruptions.py\n(same file as training)"]; ort [label="ONNX Runtime (CPU)\n7 models"]; }
+vol [label="./models_onnx\n(read-only volume)", shape=folder, fillcolor="#fff3b0"]; user [label="evaluator browser\nhttp://localhost:8080", shape=ellipse, fillcolor="#fde8d8"];
+user -> ui; ui -> api [label="/api/* via nginx proxy\nmultipart upload"]; api -> corr; api -> ort; vol -> ort; }

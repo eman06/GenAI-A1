@@ -1,0 +1,8 @@
+digraph G { rankdir=LR; node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, fillcolor="#e8f1fb"]; edge [fontname="Helvetica", fontsize=9];
+in [label="corrupted x~\n3x128x128", fillcolor="#fde8d8"];
+e1 [label="Conv-BN-ReLU x3\n(stride 2)\nb x 64x64"]; e2 [label="Conv s2 + Conv\n2b x 32x32\n+Dropout2d"]; e3 [label="Conv s2 + Conv\n4b x 16x16\n+Dropout2d"];
+z [label="1x1 conv\nlatent z\nc x 16x16\n(c in {4..32})", fillcolor="#fff3b0"];
+d3 [label="Conv 4b\nConvT s2 -> 2b\n32x32"]; d2 [label="ConvT s2 -> b\n64x64"]; d1 [label="Conv, ConvT s2\nb x 128x128"]; out [label="3x3 conv + sigmoid\nx^ 3x128x128", fillcolor="#dff5e1"];
+in -> e1 -> e2 -> e3 -> z -> d3 -> d2 -> d1 -> out;
+e1 -> d1 [style=dashed, label="optional single skip\n(ablation only)", color="#999999"];
+}

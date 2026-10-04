@@ -1,0 +1,6 @@
+digraph G { rankdir=LR; node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, fillcolor="#e8f1fb"]; edge [fontname="Helvetica", fontsize=9];
+x [label="photo x\n3x128x128", fillcolor="#fde8d8"]; s [label="style s in {1,2,3}", fillcolor="#fde8d8"]; emb [label="nn.Embedding(3, E)", fillcolor="#fff3b0"];
+G [label="U-Net generator\n6 down (128->2) / 5 up + skips\nstyle map concat at input\n+ style projection added at 2x2 bottleneck\ntanh -> sketch 1x128x128"];
+D [label="PatchGAN discriminator\nC64-C128-C256-C512-1\ninput: photo + sketch + style map\n14x14 real/fake logits"];
+y [label="real sketch y", fillcolor="#dff5e1"]; L [label="L_G = BCE(D(x,G(x,s),s),1) + lambda L1(y, G(x,s))\nL_D = 0.5[BCE(D(x,y,s),1) + BCE(D(x,G,s),0)]", shape=note, fillcolor="#f3e8ff"];
+s -> emb; x -> G; emb -> G; emb -> D; G -> D [label="fake"]; y -> D [label="real"]; x -> D; D -> L [style=dashed]; }

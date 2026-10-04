@@ -1,0 +1,6 @@
+digraph G { rankdir=LR; node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=11, fillcolor="#e8f1fb"]; edge [fontname="Helvetica", fontsize=9];
+in [label="input x~", fillcolor="#fde8d8"]; g [label="gate G (init: Task 2 classifier)\nw = softmax(G(x~)/tau)", fillcolor="#fff3b0"];
+b0 [label="identity"]; b1 [label="A_salt (init: specialist)"]; b2 [label="A_blur (init: specialist)"]; b3 [label="A_occ (init: specialist)"];
+sum [label="sum_k w_k * branch_k", shape=ellipse, fillcolor="#ffffff"]; out [label="x^", fillcolor="#dff5e1"];
+loss [label="L = l1 L1 + ls (1-SSIM)\n+ lc CE(G, label) + lb L_balance", shape=note, fillcolor="#f3e8ff"];
+in -> g; in -> b0; in -> b1; in -> b2; in -> b3; b0 -> sum; b1 -> sum; b2 -> sum; b3 -> sum; g -> sum [label="w0..w3"]; sum -> out; out -> loss [style=dashed]; g -> loss [style=dashed]; }
