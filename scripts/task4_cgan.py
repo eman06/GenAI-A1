@@ -230,7 +230,7 @@ def stage_train(args, data, device, mlflow):
 
 
 def load_generator(device, which="state_dict"):
-    ck = torch.load(CKPT, map_location=device)
+    ck = torch.load(CKPT, map_location=device, weights_only=False)
     cfg = ck["cfg"]
     G = StyleUNetGenerator(cfg["base_ch"], 3, cfg["emb_dim"], cfg["dropout"])
     G.load_state_dict(ck[which])

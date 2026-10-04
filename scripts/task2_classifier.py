@@ -108,7 +108,7 @@ def stage_train(args, data, device, mlflow):
 
 
 def load_classifier(device):
-    ck = torch.load(CKPT, map_location=device)
+    ck = torch.load(CKPT, map_location=device, weights_only=False)
     m = build(ck["model_cfg"])
     m.load_state_dict(ck["state_dict"])
     return m.to(device).eval()

@@ -127,7 +127,7 @@ def stage_train(args, data, device, mlflow):
 def load_specialists(device):
     out = {}
     for e in EXPERTS:
-        ck = torch.load(ckpt_path(e), map_location=device)
+        ck = torch.load(ckpt_path(e), map_location=device, weights_only=False)
         m = build_autoencoder(ck["model_cfg"])
         m.load_state_dict(ck["state_dict"])
         out[e] = m.to(device).eval()

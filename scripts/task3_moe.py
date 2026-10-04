@@ -250,7 +250,7 @@ def plot_moe_history(hist, path, warmup):
 
 
 def load_moe(device):
-    ck = torch.load(CKPT, map_location=device)
+    ck = torch.load(CKPT, map_location=device, weights_only=False)
     moe = build_moe(device, ck["cfg"]["tau"])
     moe.load_state_dict(ck["state_dict"])
     return moe.eval()

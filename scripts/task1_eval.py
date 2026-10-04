@@ -26,7 +26,7 @@ def main():
     args = ap.parse_args()
 
     device = get_device()
-    ck = torch.load(os.path.join(paths.CKPT_DIR, f"task1_udae_{args.tag}.pt"), map_location=device)
+    ck = torch.load(os.path.join(paths.CKPT_DIR, f"task1_udae_{args.tag}.pt"), map_location=device, weights_only=False)
     model = build_autoencoder(ck["model_cfg"])
     model.load_state_dict(ck["state_dict"])
     model = model.to(device).eval()
