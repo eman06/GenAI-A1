@@ -9,9 +9,12 @@ def ssim_per_image(pred, target):
     return ssim(pred.float(), target.float(), data_range=1.0, size_average=False)
 
 
+PSNR_CAP = 50.0   # identical images (identity bypass on clean input) would otherwise give ~100 dB
+
+
 def psnr_per_image(pred, target, eps=1e-10):
     mse = F.mse_loss(pred.float(), target.float(), reduction="none").flatten(1).mean(1)
-    return 10.0 * torch.log10(1.0 / (mse + eps))
+    return (10.0 * torch.log10(1.0 / (mse + eps))).clamp(max=PSNR_CAP)
 
 
 def l1_per_image(pred, target):

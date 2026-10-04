@@ -16,7 +16,7 @@ PRETTY = {"clean": "Clean", "salt_pepper": "Salt & pepper", "blur": "Gaussian bl
 
 @torch.no_grad()
 def evaluate_on_manifest(predict_fn, loader, device):
-    """predict_fn(noisy) -> (restored, extras: dict[str, Tensor(B,...)]).
+    """predict_fn(noisy, label) -> (restored, extras: dict[str, Tensor(B,...)]).
 
     Returns a per-sample DataFrame with input-vs-clean and output-vs-clean metrics plus any
     extras (e.g. routing weights), so every later table is a groupby on the same data.
@@ -25,7 +25,7 @@ def evaluate_on_manifest(predict_fn, loader, device):
     entries = loader.dataset.entries
     for noisy, clean, label, level, idx in loader:
         noisy, clean = noisy.to(device), clean.to(device)
-        out, extras = predict_fn(noisy)
+        out, extras = predict_fn(noisy, label.to(device))
         out = out.float().clamp(0, 1)
         m = {
             "in_l1": l1_per_image(noisy, clean), "in_ssim": ssim_per_image(noisy, clean),
@@ -76,9 +76,9 @@ def restoration_grid(dataset, entry_ids, predict_fn, device, path, titles=None, 
     fig, axes = plt.subplots(n, 4, figsize=(8.4, 2.2 * n))
     axes = np.atleast_2d(axes)
     for r, eid in enumerate(entry_ids):
-        noisy, clean, *_ = dataset[eid]
+        noisy, clean, label, *_ = dataset[eid]
         with torch.no_grad():
-            out, _ = predict_fn(noisy.unsqueeze(0).to(device))
+            out, _ = predict_fn(noisy.unsqueeze(0).to(device), torch.tensor([label], device=device))
         out = out[0].float().clamp(0, 1).cpu()
         err = (out - clean).abs().mean(0).numpy()
         e = dataset.entries[eid]

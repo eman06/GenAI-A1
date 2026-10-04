@@ -35,7 +35,7 @@ def main():
     out = os.path.join(paths.RESULTS_DIR, "task1")
     os.makedirs(out, exist_ok=True)
 
-    def predict(x):
+    def predict(x, label=None):
         return model(x), {}
 
     df = evaluate_on_manifest(predict, loader, device)
