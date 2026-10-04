@@ -61,7 +61,7 @@ python scripts/task1_export.py
 Experiment tracking uses MLflow. Runs are written to `outputs/mlruns`. To browse them, download that folder and run:
 
 ```bash
-mlflow ui --backend-store-uri outputs/mlruns
+mlflow ui --backend-store-uri sqlite:///outputs/mlflow.db   (Task 4: sqlite:///outputs/mlflow_task4.db)
 ```
 
 ## Task 1 design notes
