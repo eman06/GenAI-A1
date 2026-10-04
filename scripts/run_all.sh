@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Resumable sequential runner for everything after Task 1 (Colab).
+# Resumable sequential runner for all four tasks (Colab).
 # Each stage is skipped if its output already exists, so the script can simply be re-run after a disconnect.
 # Logs go to $GENAI_OUT/logs/*.log (keeps the notebook output small).
 set -u
@@ -17,6 +17,11 @@ stage() {  # stage <name> <done-marker-file> <python args...>
   backup > /dev/null
 }
 
+stage data           "$GENAI_DATA/pets_128.npz"               scripts/prepare_data.py
+stage t1_optuna      "$R/task1/best_params.json"             scripts/task1_optuna.py --trials ${T1_TRIALS:-12} --epochs 6
+stage t1_train       "$C/task1_udae_final.pt"                scripts/task1_train.py --epochs ${T1_EPOCHS:-35}
+stage t1_eval        "$R/task1/test_final_by_type.csv"       scripts/task1_eval.py
+stage t1_export      "$M/task1_universal_dae.onnx"           scripts/task1_export.py
 stage t2_clf_optuna  "$R/task2/classifier_best_params.json"  scripts/task2_classifier.py optuna --trials 12 --epochs 5
 stage t2_clf_train   "$C/task2_classifier.pt"                scripts/task2_classifier.py train --epochs 25
 stage t2_clf_eval    "$R/task2/classifier_test_report.json"  scripts/task2_classifier.py eval
@@ -37,4 +42,6 @@ stage t4_train       "$C/task4_generator.pt"                 scripts/task4_cgan.
 stage t4_eval        "$R/task4/cgan_test_by_style.csv"       scripts/task4_cgan.py eval
 stage t4_export      "$M/task4_generator.onnx"               scripts/task4_cgan.py export
 stage samples "$O/samples/face_test_0000.png" scripts/export_samples.py
+stage t1_ablation    "$C/task1_udae_skip_ablation.pt"        scripts/task1_train.py --epochs 20 --skip --tag skip_ablation
+stage t1_abl_eval    "$R/task1/test_skip_ablation_by_type.csv" scripts/task1_eval.py --tag skip_ablation
 echo "[$(date +%T)] ALL DONE"
