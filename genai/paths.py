@@ -24,9 +24,19 @@ def optuna_storage(name):
 
 
 def setup_mlflow(experiment):
+    """SQLite backend store + local artifact folder.
+
+    Recent MLflow releases put the plain-file backend ('./mlruns') in maintenance mode and refuse
+    new runs, so run metadata goes to outputs/mlflow.db and artifacts to outputs/mlruns/<experiment>.
+    View with:  mlflow ui --backend-store-uri sqlite:///outputs/mlflow.db
+    """
+    import pathlib
+
     import mlflow
     ensure_dirs()
-    uri = os.environ.get("MLFLOW_TRACKING_URI", "file:" + MLRUNS_DIR.replace("\\", "/"))
-    mlflow.set_tracking_uri(uri)
+    db = os.path.join(OUT_ROOT, "mlflow.db").replace("\\", "/")
+    mlflow.set_tracking_uri(os.environ.get("MLFLOW_TRACKING_URI", f"sqlite:///{db}"))
+    if mlflow.get_experiment_by_name(experiment) is None:
+        mlflow.create_experiment(experiment, artifact_location=pathlib.Path(MLRUNS_DIR, experiment).as_uri())
     mlflow.set_experiment(experiment)
     return mlflow
