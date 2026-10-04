@@ -1,0 +1,14 @@
+# Training / evaluation (Colab already ships torch, torchvision, numpy, pandas, matplotlib, scikit-learn)
+torch>=2.1
+torchvision>=0.16
+numpy
+pandas
+matplotlib
+pillow
+scikit-learn
+pytorch-msssim==1.0.0
+optuna>=3.5
+mlflow>=2.10
+onnx>=1.15
+onnxruntime>=1.17
+pytest

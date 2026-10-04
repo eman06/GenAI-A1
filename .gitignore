@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+data/
+outputs/
+*.pt
+*.npz
+.venv/
+node_modules/
+dist/
+# ONNX files are distributed via Git LFS / release download (see README)
+models_onnx/*.onnx
