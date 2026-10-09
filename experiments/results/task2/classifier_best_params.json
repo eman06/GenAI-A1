@@ -1,0 +1,12 @@
+{
+  "trial": 3,
+  "val_macro_f1": 0.9882697900058597,
+  "lr": 0.0005418282319533242,
+  "batch_size": 64,
+  "channels": "wide",
+  "dropout": 0.3925879806965068,
+  "weight_decay": 6.290644294586145e-06,
+  "val_acc": 0.9877717391304348,
+  "n_complete": 4,
+  "n_pruned": 8
+}

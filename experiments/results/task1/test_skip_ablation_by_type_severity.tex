@@ -1,0 +1,21 @@
+\begin{tabular}{llrrrrr}
+\toprule
+ &  & in_psnr & psnr & in_ssim & ssim & l1 \\
+type & severity &  &  &  &  &  \\
+\midrule
+clean & none & 50.000 & 33.531 & 1.000 & 0.970 & 0.015 \\
+\cline{1-7}
+\multirow[t]{3}{*}{salt_pepper} & low & 20.133 & 32.521 & 0.602 & 0.957 & 0.017 \\
+ & medium & 15.875 & 30.972 & 0.340 & 0.931 & 0.019 \\
+ & high & 13.142 & 29.038 & 0.204 & 0.886 & 0.024 \\
+\cline{1-7}
+\multirow[t]{3}{*}{blur} & low & 32.336 & 31.708 & 0.944 & 0.942 & 0.019 \\
+ & medium & 26.774 & 28.269 & 0.806 & 0.865 & 0.027 \\
+ & high & 24.353 & 25.047 & 0.692 & 0.726 & 0.038 \\
+\cline{1-7}
+\multirow[t]{3}{*}{occlusion} & low & 16.703 & 25.689 & 0.862 & 0.899 & 0.026 \\
+ & medium & 13.268 & 22.736 & 0.726 & 0.828 & 0.037 \\
+ & high & 10.749 & 20.036 & 0.536 & 0.721 & 0.055 \\
+\cline{1-7}
+\bottomrule
+\end{tabular}

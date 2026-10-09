@@ -41,6 +41,7 @@ export default function Restoration({ mode }) {
   const [corruption, setCorruption] = useState('salt_pepper')
   const [level, setLevel] = useState(1)
   const [seed, setSeed] = useState(0)
+  const [variant, setVariant] = useState('bottleneck')
   const [res, setRes] = useState(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
@@ -51,6 +52,7 @@ export default function Restoration({ mode }) {
     try {
       const r = await postForm(cfg.endpoint, {
         file: src?.file, sample: src?.sample, corruption, level, seed,
+        ...(mode === 'universal' ? { variant } : {}),
       })
       setRes(r)
     } catch (e) {
@@ -99,6 +101,24 @@ export default function Restoration({ mode }) {
               </>
             )}
           </div>
+          {mode === 'universal' && (
+            <div className="card flex flex-col gap-3">
+              <div className="label">3 · Model variant</div>
+              <div className="grid grid-cols-2 gap-2">
+                {[['bottleneck', 'Bottleneck only'], ['skip', 'With limited skip']].map(([v, l]) => (
+                  <button key={v} onClick={() => setVariant(v)}
+                    className={`rounded-lg px-2 py-2 text-xs font-semibold ${variant === v ? 'bg-accent-500 text-ink-950' : 'bg-ink-800 text-slate-300 hover:bg-ink-700'}`}>
+                    {l}
+                  </button>
+                ))}
+              </div>
+              <div className="text-xs text-slate-400">
+                {variant === 'bottleneck'
+                  ? 'Submitted Task 1 model: every pixel passes through the 16×16×32 latent (no skip connections).'
+                  : 'Ablation: same network plus one 64×64 skip connection; sharper, but detail can bypass the bottleneck.'}
+              </div>
+            </div>
+          )}
           <button className="btn-primary py-3" disabled={!src || busy} onClick={run}>
             {busy ? 'Running…' : 'Run model'}
           </button>

@@ -1,0 +1,24 @@
+{
+  "mean_weight": {
+    "identity": 0.1431,
+    "salt_pepper": 0.2949,
+    "blur": 0.2821,
+    "occlusion": 0.2799
+  },
+  "top1_share": {
+    "identity": 0.10932134096484056,
+    "salt_pepper": 0.3,
+    "blur": 0.3009811937857727,
+    "occlusion": 0.2896974652493868
+  },
+  "route_acc_top1": 0.9881439084219134,
+  "inactive_branches(<2% mean weight)": [],
+  "off_target_weight_by_true_class": {
+    "clean": 0.05910346434373204,
+    "salt_pepper": 0.02594027159551271,
+    "blur": 0.07993011992515087,
+    "occlusion": 0.08826641102675203
+  },
+  "share_dominated(w_max>0.9)": 0.8831016625783592,
+  "share_distributed(w_max<0.6)": 0.016135186699373125
+}

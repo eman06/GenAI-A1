@@ -1,0 +1,17 @@
+{
+  "trial": 1,
+  "mean_val_objective": 0.34575962896148366,
+  "lr": 0.0003574712922600243,
+  "batch_size": 16,
+  "latent_ch": 32,
+  "base_ch": 64,
+  "alpha": 0.8745991883601898,
+  "blur_psnr": 22.402616500854492,
+  "blur_ssim": 0.7622787356376648,
+  "occlusion_psnr": 19.619335174560547,
+  "occlusion_ssim": 0.6404308676719666,
+  "salt_pepper_psnr": 22.37002182006836,
+  "salt_pepper_ssim": 0.7501077651977539,
+  "n_complete": 3,
+  "n_pruned": 5
+}

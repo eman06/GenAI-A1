@@ -1,0 +1,10 @@
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+ & clean PSNR & salt_pepper PSNR & blur PSNR & occlusion PSNR & clean SSIM & salt_pepper SSIM & blur SSIM & occlusion SSIM & overall PSNR & overall SSIM \\
+\midrule
+Soft MoE (T3) & 48.690 & 26.900 & 26.434 & 22.033 & 0.998 & 0.859 & 0.824 & 0.758 & 27.479 & 0.832 \\
+Universal DAE (T1) & 23.287 & 23.156 & 22.768 & 20.290 & 0.849 & 0.834 & 0.791 & 0.734 & 22.193 & 0.792 \\
+Hard routing, predicted (T2) & 49.826 & 26.706 & 26.104 & 22.112 & 0.998 & 0.850 & 0.815 & 0.738 & 27.459 & 0.821 \\
+Hard routing, oracle (T2) & 50.000 & 26.706 & 26.102 & 22.124 & 1.000 & 0.850 & 0.815 & 0.737 & 27.479 & 0.821 \\
+\bottomrule
+\end{tabular}

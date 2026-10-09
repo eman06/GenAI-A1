@@ -1,0 +1,39 @@
+[I 2026-10-04 14:49:06,252] A new study created in RDB with name: task3_moe
+  init (classifier gate + specialists, tau=1.0): SSIM 0.8612 PSNR 31.55
+  [warmup] ep 1 loss 0.0577 ce 0.066 bal 0.0013 | val SSIM 0.8619 PSNR 31.42 route_acc 0.985 w=[0.257, 0.224, 0.27, 0.249] (18s)
+  [joint] ep 1 loss 0.0582 ce 0.036 bal 0.0004 | val SSIM 0.8620 PSNR 31.48 route_acc 0.988 w=[0.26, 0.224, 0.268, 0.248] (31s)
+  [joint] ep 2 loss 0.0533 ce 0.026 bal 0.0003 | val SSIM 0.8630 PSNR 31.51 route_acc 0.988 w=[0.254, 0.224, 0.274, 0.248] (31s)
+[I 2026-10-04 14:51:03,932] Trial 0 finished with value: 0.16483631916344166 and parameters: {'lr_joint': 0.0001, 'tau': 1.0, 'lambda_c': 0.1, 'lambda_b': 0.01, 'lambda_1': 0.8}. Best is trial 0 with value: 0.16483631916344166.
+  [joint] ep 3 loss 0.0525 ce 0.021 bal 0.0003 | val SSIM 0.8634 PSNR 31.55 route_acc 0.988 w=[0.254, 0.224, 0.273, 0.249] (30s)
+  init (classifier gate + specialists, tau=1.9260714596148742): SSIM 0.8622 PSNR 31.29
+  [warmup] ep 1 loss 0.0884 ce 0.071 bal 0.0021 | val SSIM 0.8632 PSNR 30.76 route_acc 0.977 w=[0.26, 0.229, 0.251, 0.26] (18s)
+  [joint] ep 1 loss 0.0829 ce 0.040 bal 0.0014 | val SSIM 0.8650 PSNR 31.02 route_acc 0.982 w=[0.259, 0.227, 0.255, 0.26] (31s)
+  [joint] ep 2 loss 0.0800 ce 0.032 bal 0.0010 | val SSIM 0.8657 PSNR 31.12 route_acc 0.982 w=[0.261, 0.226, 0.254, 0.259] (31s)
+[I 2026-10-04 14:53:01,115] Trial 1 finished with value: 0.162571482360363 and parameters: {'lr_joint': 3.574712922600245e-05, 'tau': 1.9260714596148742, 'lambda_c': 0.17524101118128144, 'lambda_b': 0.015751320499779727, 'lambda_1': 0.5702083881990965}. Best is trial 1 with value: 0.162571482360363.
+  [joint] ep 3 loss 0.0799 ce 0.030 bal 0.0010 | val SSIM 0.8659 PSNR 31.17 route_acc 0.982 w=[0.262, 0.226, 0.253, 0.259] (31s)
+  init (classifier gate + specialists, tau=0.5871254182522991): SSIM 0.8610 PSNR 31.57
+  [warmup] ep 1 loss 0.0761 ce 0.090 bal 0.0016 | val SSIM 0.8605 PSNR 31.30 route_acc 0.981 w=[0.248, 0.224, 0.278, 0.25] (18s)
+  [joint] ep 1 loss 0.0606 ce 0.039 bal 0.0005 | val SSIM 0.8617 PSNR 31.35 route_acc 0.981 w=[0.249, 0.224, 0.277, 0.25] (31s)
+  [joint] ep 2 loss 0.0586 ce 0.034 bal 0.0005 | val SSIM 0.8618 PSNR 31.34 route_acc 0.978 w=[0.245, 0.224, 0.28, 0.251] (30s)
+[I 2026-10-04 14:54:56,946] Trial 2 finished with value: 0.1665287483483553 and parameters: {'lr_joint': 1.6998978382700755e-05, 'tau': 0.5871254182522991, 'lambda_c': 0.29621516588303487, 'lambda_b': 0.015930522616241012, 'lambda_1': 0.8186326600082204}. Best is trial 1 with value: 0.162571482360363.
+  [joint] ep 3 loss 0.0582 ce 0.032 bal 0.0005 | val SSIM 0.8619 PSNR 31.38 route_acc 0.980 w=[0.246, 0.224, 0.278, 0.251] (30s)
+  init (classifier gate + specialists, tau=1.9548647782429915): SSIM 0.8622 PSNR 31.26
+  [warmup] ep 1 loss 0.0949 ce 0.077 bal 0.0019 | val SSIM 0.8636 PSNR 31.02 route_acc 0.980 w=[0.265, 0.227, 0.246, 0.262] (18s)
+  [joint] ep 1 loss 0.0826 ce 0.033 bal 0.0011 | val SSIM 0.8654 PSNR 31.07 route_acc 0.982 w=[0.264, 0.226, 0.249, 0.261] (31s)
+  [joint] ep 2 loss 0.0826 ce 0.037 bal 0.0011 | val SSIM 0.8653 PSNR 30.97 route_acc 0.984 w=[0.259, 0.226, 0.254, 0.262] (31s)
+[I 2026-10-04 14:56:54,523] Trial 3 finished with value: 0.16317621432244778 and parameters: {'lr_joint': 1.072520974317199e-05, 'tau': 1.9548647782429915, 'lambda_c': 0.2595942550311264, 'lambda_b': 0.0026587543983272706, 'lambda_1': 0.5818212352431953}. Best is trial 1 with value: 0.162571482360363.
+  [joint] ep 3 loss 0.0827 ce 0.035 bal 0.0010 | val SSIM 0.8654 PSNR 31.01 route_acc 0.984 w=[0.26, 0.226, 0.252, 0.262] (31s)
+  init (classifier gate + specialists, tau=0.9563633644393066): SSIM 0.8612 PSNR 31.55
+[I 2026-10-04 14:57:18,970] Trial 4 pruned. 
+  [warmup] ep 1 loss 0.0748 ce 0.069 bal 0.0012 | val SSIM 0.8620 PSNR 31.37 route_acc 0.984 w=[0.257, 0.224, 0.272, 0.246] (18s)
+  init (classifier gate + specialists, tau=0.7092407909780627): SSIM 0.8610 PSNR 31.56
+  [warmup] ep 1 loss 0.0645 ce 0.114 bal 0.0025 | val SSIM 0.8626 PSNR 31.41 route_acc 0.982 w=[0.26, 0.224, 0.274, 0.242] (18s)
+[I 2026-10-04 14:58:24,668] Trial 5 pruned. 
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._optimization_history.plot_optimization_history is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._param_importances.plot_param_importances is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._parallel_coordinate.plot_parallel_coordinate is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+  [joint] ep 1 loss 0.0658 ce 0.066 bal 0.0013 | val SSIM 0.8625 PSNR 31.44 route_acc 0.988 w=[0.257, 0.224, 0.27, 0.249] (31s)
+BEST: {'trial': 1, 'val_objective': 0.162571482360363, 'lr_joint': 3.574712922600245e-05, 'tau': 1.9260714596148742, 'lambda_c': 0.17524101118128144, 'lambda_b': 0.015751320499779727, 'lambda_1': 0.5702083881990965, 'mean_w': [0.26172319054603577, 0.22625744342803955, 0.2530985176563263, 0.2589208483695984], 'val_psnr': 31.17267608642578, 'val_ssim': 0.8659324049949646, 'n_complete': 4, 'n_pruned': 2}

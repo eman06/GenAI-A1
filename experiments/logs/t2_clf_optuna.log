@@ -1,0 +1,58 @@
+[I 2026-10-04 14:15:56,742] A new study created in RDB with name: task2_classifier
+  ep   1 train 0.4168/0.839 | val loss 0.6416 acc 0.7785 F1 0.7485 (5s)
+  ep   2 train 0.0954/0.971 | val loss 0.1051 acc 0.9579 F1 0.9595 (4s)
+  ep   3 train 0.0724/0.979 | val loss 0.0766 acc 0.9755 F1 0.9762 (6s)
+  ep   4 train 0.0474/0.985 | val loss 0.0552 acc 0.9837 F1 0.9843 (4s)
+[I 2026-10-04 14:16:20,601] Trial 0 finished with value: 0.9842712448104005 and parameters: {'lr': 0.001, 'batch_size': 64, 'channels': 'medium', 'dropout': 0.3, 'weight_decay': 0.0001}. Best is trial 0 with value: 0.9842712448104005.
+  ep   5 train 0.0497/0.986 | val loss 0.0496 acc 0.9837 F1 0.9843 (4s)
+  ep   1 train 0.5445/0.806 | val loss 0.2570 acc 0.9022 F1 0.9011 (7s)
+  ep   2 train 0.1586/0.959 | val loss 0.1282 acc 0.9579 F1 0.9590 (4s)
+  ep   3 train 0.0899/0.978 | val loss 0.0786 acc 0.9823 F1 0.9831 (5s)
+  ep   4 train 0.0613/0.982 | val loss 0.0611 acc 0.9851 F1 0.9857 (6s)
+[I 2026-10-04 14:16:47,243] Trial 1 finished with value: 0.9856507757712293 and parameters: {'lr': 0.00043284502212938834, 'batch_size': 32, 'channels': 'small', 'dropout': 0.4330880728874676, 'weight_decay': 0.00025378155082656634}. Best is trial 1 with value: 0.9856507757712293.
+  ep   5 train 0.0507/0.988 | val loss 0.0624 acc 0.9796 F1 0.9804 (4s)
+  ep   1 train 0.4578/0.852 | val loss 1.2749 acc 0.5571 F1 0.4970 (4s)
+  ep   2 train 0.1110/0.961 | val loss 1.3020 acc 0.6984 F1 0.6402 (5s)
+  ep   3 train 0.0828/0.973 | val loss 0.0787 acc 0.9796 F1 0.9805 (4s)
+  ep   4 train 0.0554/0.985 | val loss 0.0568 acc 0.9851 F1 0.9855 (4s)
+[I 2026-10-04 14:17:11,169] Trial 2 finished with value: 0.9855309127575306 and parameters: {'lr': 0.0015958573588141277, 'batch_size': 64, 'channels': 'small', 'dropout': 0.15212112147976886, 'weight_decay': 0.0001256104370001356}. Best is trial 1 with value: 0.9856507757712293.
+  ep   5 train 0.0473/0.988 | val loss 0.0499 acc 0.9837 F1 0.9843 (6s)
+  ep   1 train 0.4143/0.851 | val loss 0.3810 acc 0.8682 F1 0.8683 (6s)
+  ep   2 train 0.1088/0.967 | val loss 0.0905 acc 0.9769 F1 0.9777 (6s)
+  ep   3 train 0.0890/0.974 | val loss 0.0970 acc 0.9823 F1 0.9831 (6s)
+  ep   4 train 0.0546/0.984 | val loss 0.0655 acc 0.9742 F1 0.9752 (6s)
+[I 2026-10-04 14:17:42,454] Trial 3 finished with value: 0.9882697900058597 and parameters: {'lr': 0.0005418282319533242, 'batch_size': 64, 'channels': 'wide', 'dropout': 0.3925879806965068, 'weight_decay': 6.290644294586145e-06}. Best is trial 3 with value: 0.9882697900058597.
+  ep   5 train 0.0425/0.988 | val loss 0.0435 acc 0.9878 F1 0.9883 (6s)
+  ep   1 train 0.4993/0.805 | val loss 4.7941 acc 0.2717 F1 0.1211 (6s)
+[I 2026-10-04 14:17:55,264] Trial 4 pruned. 
+  ep   2 train 0.1449/0.960 | val loss 0.1834 acc 0.9484 F1 0.9509 (6s)
+  ep   1 train 0.5731/0.760 | val loss 1.1518 acc 0.5788 F1 0.5363 (6s)
+[I 2026-10-04 14:18:16,601] Trial 5 pruned. 
+  ep   2 train 0.1395/0.962 | val loss 0.1482 acc 0.9389 F1 0.9404 (4s)
+  ep   1 train 0.5175/0.786 | val loss 3.8796 acc 0.2717 F1 0.1163 (4s)
+[I 2026-10-04 14:18:36,782] Trial 6 pruned. 
+  ep   2 train 0.1227/0.966 | val loss 0.2443 acc 0.9402 F1 0.9399 (5s)
+  ep   1 train 0.3218/0.891 | val loss 0.3197 acc 0.8859 F1 0.8855 (7s)
+[I 2026-10-04 14:19:00,662] Trial 7 pruned. 
+  ep   2 train 0.1083/0.962 | val loss 1.2748 acc 0.7011 F1 0.6339 (6s)
+  ep   1 train 0.4381/0.836 | val loss 0.5744 acc 0.7826 F1 0.7865 (6s)
+  ep   2 train 0.1157/0.963 | val loss 0.1477 acc 0.9606 F1 0.9611 (6s)
+[I 2026-10-04 14:19:29,620] Trial 8 pruned. 
+  ep   3 train 0.0835/0.977 | val loss 0.5194 acc 0.8193 F1 0.8135 (6s)
+  ep   1 train 0.7243/0.758 | val loss 0.3263 acc 0.8967 F1 0.8966 (6s)
+[I 2026-10-04 14:19:51,214] Trial 9 pruned. 
+  ep   2 train 0.2342/0.938 | val loss 0.2180 acc 0.9307 F1 0.9338 (5s)
+  ep   1 train 0.4399/0.842 | val loss 0.4557 acc 0.8410 F1 0.8425 (6s)
+[I 2026-10-04 14:20:14,242] Trial 10 pruned. 
+  ep   2 train 0.1214/0.963 | val loss 0.2392 acc 0.9389 F1 0.9392 (6s)
+  ep   1 train 0.4893/0.834 | val loss 0.4949 acc 0.8478 F1 0.8395 (6s)
+  ep   2 train 0.1345/0.957 | val loss 0.1257 acc 0.9579 F1 0.9593 (4s)
+[I 2026-10-04 14:20:40,115] Trial 11 pruned. 
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._optimization_history.plot_optimization_history is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._param_importances.plot_param_importances is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._parallel_coordinate.plot_parallel_coordinate is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+  ep   3 train 0.0736/0.981 | val loss 0.0890 acc 0.9769 F1 0.9775 (4s)
+BEST: {'trial': 3, 'val_macro_f1': 0.9882697900058597, 'lr': 0.0005418282319533242, 'batch_size': 64, 'channels': 'wide', 'dropout': 0.3925879806965068, 'weight_decay': 6.290644294586145e-06, 'val_acc': 0.9877717391304348, 'n_complete': 4, 'n_pruned': 8}

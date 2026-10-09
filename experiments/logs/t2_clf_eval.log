@@ -1,0 +1,18 @@
+             precision  recall      f1  support
+clean           0.9777  0.9935  0.9855   3669.0
+salt_pepper     1.0000  1.0000  1.0000  11007.0
+blur            0.9991  0.9994  0.9992  11007.0
+occlusion       0.9986  0.9930  0.9958  11007.0
+macro avg       0.9939  0.9965  0.9951  36690.0
+accuracy 0.9970564186426819 | by type/severity: {
+ "blur/high": 1.0,
+ "blur/low": 0.9980921231943308,
+ "blur/medium": 1.0,
+ "clean/none": 0.9934587080948487,
+ "occlusion/high": 1.0,
+ "occlusion/low": 0.9790133551376397,
+ "occlusion/medium": 1.0,
+ "salt_pepper/high": 1.0,
+ "salt_pepper/low": 1.0,
+ "salt_pepper/medium": 1.0
+}

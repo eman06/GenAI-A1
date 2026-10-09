@@ -1,0 +1,20 @@
+{
+  "onnx_path": "task3_soft_moe.onnx",
+  "n_samples": 40,
+  "atol": 0.0001,
+  "outputs": [
+    {
+      "name": "output",
+      "max_abs_diff": 8.046627044677734e-07,
+      "mean_abs_diff": 3.5062974745869724e-08,
+      "passed": true
+    },
+    {
+      "name": "weights",
+      "max_abs_diff": 2.682209014892578e-07,
+      "mean_abs_diff": 1.3799427378557994e-08,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

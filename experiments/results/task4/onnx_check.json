@@ -1,0 +1,14 @@
+{
+  "onnx_path": "task4_generator.onnx",
+  "n_samples": 24,
+  "atol": 0.0001,
+  "outputs": [
+    {
+      "name": "sketch",
+      "max_abs_diff": 1.4901161193847656e-06,
+      "mean_abs_diff": 7.71592567616608e-08,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

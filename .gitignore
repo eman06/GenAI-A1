@@ -11,3 +11,4 @@ dist/
 # ONNX files are distributed via Git LFS / release download (see README)
 models_onnx/*.onnx
 drive_results/
+tracking/

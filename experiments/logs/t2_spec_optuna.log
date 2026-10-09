@@ -1,0 +1,72 @@
+[I 2026-10-04 14:24:27,923] A new study created in RDB with name: task2_specialists
+  ep   1 train 0.2214 | val L1 0.0768 SSIM 0.5911 PSNR 20.00 obj 0.4857 (6s)
+  ep   2 train 0.1295 | val L1 0.0777 SSIM 0.6724 PSNR 20.01 obj 0.4053 (6s)
+  ep   3 train 0.1166 | val L1 0.0672 SSIM 0.6941 PSNR 21.31 obj 0.3731 (5s)
+  ep   4 train 0.1117 | val L1 0.0616 SSIM 0.7100 PSNR 21.92 obj 0.3516 (5s)
+  ep   1 train 0.2206 | val L1 0.0779 SSIM 0.6038 PSNR 19.76 obj 0.4742 (7s)
+  ep   2 train 0.1262 | val L1 0.0770 SSIM 0.6881 PSNR 20.03 obj 0.3889 (6s)
+  ep   3 train 0.1143 | val L1 0.0623 SSIM 0.7148 PSNR 21.79 obj 0.3475 (7s)
+  ep   4 train 0.1098 | val L1 0.0607 SSIM 0.7232 PSNR 21.93 obj 0.3375 (6s)
+  ep   1 train 0.2441 | val L1 0.1188 SSIM 0.4891 PSNR 15.51 obj 0.6297 (7s)
+  ep   2 train 0.1613 | val L1 0.0943 SSIM 0.5666 PSNR 18.01 obj 0.5277 (5s)
+  ep   3 train 0.1483 | val L1 0.0791 SSIM 0.6045 PSNR 19.04 obj 0.4746 (6s)
+[I 2026-10-04 14:25:43,060] Trial 0 finished with value: 0.38442564383149147 and parameters: {'lr': 0.001, 'batch_size': 32, 'latent_ch': 16, 'base_ch': 32, 'alpha': 0.8}. Best is trial 0 with value: 0.38442564383149147.
+  ep   4 train 0.1427 | val L1 0.0767 SSIM 0.6125 PSNR 19.35 obj 0.4642 (6s)
+  ep   1 train 0.1657 | val L1 0.0744 SSIM 0.6199 PSNR 20.37 obj 0.4544 (9s)
+  ep   2 train 0.1026 | val L1 0.0700 SSIM 0.6964 PSNR 21.22 obj 0.3736 (9s)
+  ep   3 train 0.0932 | val L1 0.0617 SSIM 0.7426 PSNR 21.95 obj 0.3191 (9s)
+  ep   4 train 0.0895 | val L1 0.0585 SSIM 0.7501 PSNR 22.37 obj 0.3084 (9s)
+  ep   1 train 0.1625 | val L1 0.0743 SSIM 0.6298 PSNR 20.44 obj 0.4444 (10s)
+  ep   2 train 0.1000 | val L1 0.0661 SSIM 0.7201 PSNR 21.58 obj 0.3460 (10s)
+  ep   3 train 0.0916 | val L1 0.0593 SSIM 0.7569 PSNR 22.21 obj 0.3025 (9s)
+  ep   4 train 0.0883 | val L1 0.0576 SSIM 0.7623 PSNR 22.40 obj 0.2953 (10s)
+  ep   1 train 0.1845 | val L1 0.0856 SSIM 0.5548 PSNR 18.65 obj 0.5308 (9s)
+  ep   2 train 0.1293 | val L1 0.0875 SSIM 0.5946 PSNR 18.08 obj 0.4929 (9s)
+  ep   3 train 0.1204 | val L1 0.0812 SSIM 0.6305 PSNR 18.75 obj 0.4508 (10s)
+[I 2026-10-04 14:27:36,175] Trial 1 finished with value: 0.34575962896148366 and parameters: {'lr': 0.0003574712922600243, 'batch_size': 16, 'latent_ch': 32, 'base_ch': 64, 'alpha': 0.8745991883601898}. Best is trial 1 with value: 0.34575962896148366.
+  ep   4 train 0.1170 | val L1 0.0740 SSIM 0.6404 PSNR 19.62 obj 0.4336 (9s)
+  ep   1 train 0.2337 | val L1 0.0869 SSIM 0.4959 PSNR 19.00 obj 0.5911 (9s)
+  ep   2 train 0.1297 | val L1 0.0748 SSIM 0.5899 PSNR 20.07 obj 0.4849 (9s)
+  ep   3 train 0.1178 | val L1 0.0689 SSIM 0.6261 PSNR 20.86 obj 0.4428 (8s)
+  ep   4 train 0.1143 | val L1 0.0675 SSIM 0.6324 PSNR 21.04 obj 0.4351 (9s)
+  ep   1 train 0.2372 | val L1 0.1086 SSIM 0.4847 PSNR 17.50 obj 0.6239 (9s)
+  ep   2 train 0.1248 | val L1 0.0617 SSIM 0.6167 PSNR 21.59 obj 0.4450 (9s)
+  ep   3 train 0.1078 | val L1 0.0565 SSIM 0.6466 PSNR 22.21 obj 0.4099 (9s)
+  ep   4 train 0.1032 | val L1 0.0556 SSIM 0.6532 PSNR 22.38 obj 0.4024 (9s)
+  ep   1 train 0.2465 | val L1 0.1839 SSIM 0.3662 PSNR 12.45 obj 0.8177 (9s)
+  ep   2 train 0.1525 | val L1 0.0877 SSIM 0.5219 PSNR 18.40 obj 0.5658 (8s)
+  ep   3 train 0.1411 | val L1 0.0841 SSIM 0.5479 PSNR 18.70 obj 0.5362 (9s)
+[I 2026-10-04 14:29:21,251] Trial 2 finished with value: 0.4541643212238948 and parameters: {'lr': 0.00020589728197687926, 'batch_size': 64, 'latent_ch': 32, 'base_ch': 64, 'alpha': 0.8533291826268561}. Best is trial 1 with value: 0.34575962896148366.
+  ep   4 train 0.1378 | val L1 0.0812 SSIM 0.5563 PSNR 18.98 obj 0.5250 (8s)
+  ep   1 train 0.3086 | val L1 0.2000 SSIM 0.3269 PSNR 12.74 obj 0.8731 (6s)
+  ep   2 train 0.1758 | val L1 0.0839 SSIM 0.5436 PSNR 19.18 obj 0.5403 (5s)
+  ep   3 train 0.1505 | val L1 0.0762 SSIM 0.5672 PSNR 19.97 obj 0.5090 (6s)
+[I 2026-10-04 14:29:43,499] Trial 3 pruned. 
+  ep   4 train 0.1467 | val L1 0.0749 SSIM 0.5720 PSNR 20.13 obj 0.5029 (5s)
+  ep   1 train 0.1923 | val L1 0.0719 SSIM 0.5918 PSNR 20.54 obj 0.4801 (9s)
+  ep   2 train 0.1169 | val L1 0.0676 SSIM 0.6635 PSNR 21.19 obj 0.4042 (9s)
+  ep   3 train 0.1064 | val L1 0.0701 SSIM 0.6862 PSNR 20.91 obj 0.3839 (9s)
+[I 2026-10-04 14:30:28,996] Trial 4 pruned. 
+  ep   4 train 0.1021 | val L1 0.0618 SSIM 0.6986 PSNR 21.88 obj 0.3632 (9s)
+  ep   1 train 0.3232 | val L1 0.1342 SSIM 0.4800 PSNR 15.28 obj 0.6542 (8s)
+  ep   2 train 0.1962 | val L1 0.0852 SSIM 0.6194 PSNR 19.27 obj 0.4658 (7s)
+  ep   3 train 0.1674 | val L1 0.0645 SSIM 0.6856 PSNR 21.57 obj 0.3789 (8s)
+[I 2026-10-04 14:31:09,891] Trial 5 pruned. 
+  ep   4 train 0.1574 | val L1 0.0638 SSIM 0.6947 PSNR 21.63 obj 0.3691 (7s)
+  ep   1 train 0.4016 | val L1 0.1444 SSIM 0.4655 PSNR 14.89 obj 0.6789 (5s)
+  ep   2 train 0.2394 | val L1 0.0747 SSIM 0.6077 PSNR 20.16 obj 0.4671 (6s)
+  ep   3 train 0.2161 | val L1 0.0703 SSIM 0.6370 PSNR 20.73 obj 0.4333 (5s)
+[I 2026-10-04 14:31:42,161] Trial 6 pruned. 
+  ep   4 train 0.2082 | val L1 0.0693 SSIM 0.6416 PSNR 20.84 obj 0.4277 (6s)
+  ep   1 train 0.3691 | val L1 0.0871 SSIM 0.5560 PSNR 18.93 obj 0.5311 (8s)
+  ep   2 train 0.2093 | val L1 0.0677 SSIM 0.6593 PSNR 21.06 obj 0.4084 (7s)
+  ep   3 train 0.1855 | val L1 0.0658 SSIM 0.6825 PSNR 21.31 obj 0.3833 (8s)
+[I 2026-10-04 14:32:24,422] Trial 7 pruned. 
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._optimization_history.plot_optimization_history is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._param_importances.plot_param_importances is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._parallel_coordinate.plot_parallel_coordinate is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+  ep   4 train 0.1794 | val L1 0.0646 SSIM 0.6890 PSNR 21.49 obj 0.3756 (8s)
+BEST: {'trial': 1, 'mean_val_objective': 0.34575962896148366, 'lr': 0.0003574712922600243, 'batch_size': 16, 'latent_ch': 32, 'base_ch': 64, 'alpha': 0.8745991883601898, 'blur_psnr': 22.402616500854492, 'blur_ssim': 0.7622787356376648, 'occlusion_psnr': 19.619335174560547, 'occlusion_ssim': 0.6404308676719666, 'salt_pepper_psnr': 22.37002182006836, 'salt_pepper_ssim': 0.7501077651977539, 'n_complete': 3, 'n_pruned': 5}

@@ -1,0 +1,16 @@
+config: {'lr_joint': 3.574712922600245e-05, 'tau': 1.9260714596148742, 'lambda_c': 0.17524101118128144, 'lambda_b': 0.015751320499779727, 'lambda_1': 0.5702083881990965, 'lr_gate': 0.001, 'batch_size': 32}
+  init (classifier gate + specialists, tau=1.9260714596148742): SSIM 0.8622 PSNR 31.29
+  [warmup] ep 1 loss 0.0886 ce 0.070 bal 0.0019 | val SSIM 0.8618 PSNR 30.09 route_acc 0.971 w=[0.269, 0.233, 0.197, 0.301] (18s)
+  [warmup] ep 2 loss 0.0823 ce 0.036 bal 0.0012 | val SSIM 0.8637 PSNR 31.20 route_acc 0.986 w=[0.27, 0.225, 0.246, 0.258] (18s)
+  [joint] ep 1 loss 0.0798 ce 0.025 bal 0.0010 | val SSIM 0.8645 PSNR 31.28 route_acc 0.988 w=[0.266, 0.224, 0.254, 0.256] (31s)
+  [joint] ep 2 loss 0.0801 ce 0.027 bal 0.0010 | val SSIM 0.8643 PSNR 31.23 route_acc 0.986 w=[0.266, 0.222, 0.253, 0.258] (31s)
+  [joint] ep 3 loss 0.0788 ce 0.023 bal 0.0009 | val SSIM 0.8652 PSNR 31.14 route_acc 0.986 w=[0.257, 0.224, 0.264, 0.256] (31s)
+  [joint] ep 4 loss 0.0775 ce 0.018 bal 0.0008 | val SSIM 0.8663 PSNR 31.33 route_acc 0.989 w=[0.266, 0.224, 0.258, 0.253] (31s)
+  [joint] ep 5 loss 0.0774 ce 0.018 bal 0.0008 | val SSIM 0.8664 PSNR 31.23 route_acc 0.985 w=[0.262, 0.223, 0.262, 0.253] (31s)
+  [joint] ep 6 loss 0.0773 ce 0.016 bal 0.0007 | val SSIM 0.8671 PSNR 31.31 route_acc 0.989 w=[0.265, 0.222, 0.26, 0.252] (31s)
+  [joint] ep 7 loss 0.0760 ce 0.010 bal 0.0007 | val SSIM 0.8671 PSNR 31.35 route_acc 0.990 w=[0.262, 0.223, 0.262, 0.253] (31s)
+  [joint] ep 8 loss 0.0781 ce 0.019 bal 0.0008 | val SSIM 0.8676 PSNR 31.38 route_acc 0.988 w=[0.266, 0.222, 0.26, 0.252] (31s)
+  [joint] ep 9 loss 0.0772 ce 0.018 bal 0.0006 | val SSIM 0.8676 PSNR 31.36 route_acc 0.988 w=[0.265, 0.222, 0.261, 0.252] (31s)
+  [joint] ep 10 loss 0.0766 ce 0.016 bal 0.0007 | val SSIM 0.8675 PSNR 31.36 route_acc 0.989 w=[0.265, 0.222, 0.26, 0.253] (31s)
+init val: {'l1': 0.02895289845764637, 'ssim': 0.8621895909309387, 'psnr': 31.28859519958496, 'objective': 0.16676330752670765, 'route_acc': 0.9945651888847351, 'mean_w': [0.25761285424232483, 0.2256430685520172, 0.25468742847442627, 0.2620566487312317], 'min_branch_w': 0.2256430685520172}
+best val: {'l1': 0.028366342186927795, 'ssim': 0.8676013946533203, 'psnr': 31.35724639892578, 'objective': 0.16076494753360748, 'route_acc': 0.98777174949646, 'mean_w': [0.2650930881500244, 0.2218901365995407, 0.2611352801322937, 0.25188151001930237], 'min_branch_w': 0.2218901365995407}

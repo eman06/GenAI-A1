@@ -1,0 +1,77 @@
+2026/10/04 14:00:24 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/10/04 14:00:24 INFO mlflow.store.db.utils: Updating database tables
+[I 2026-10-04 14:00:26,559] A new study created in RDB with name: task1_udae
+  ep   1 train 0.2611 | val L1 0.1083 SSIM 0.5228 PSNR 17.28 obj 0.5855 (10s)
+  ep   2 train 0.1493 | val L1 0.0858 SSIM 0.6177 PSNR 19.09 obj 0.4681 (5s)
+  ep   3 train 0.1331 | val L1 0.0942 SSIM 0.6533 PSNR 18.41 obj 0.4409 (6s)
+  ep   4 train 0.1244 | val L1 0.0683 SSIM 0.6889 PSNR 20.85 obj 0.3794 (6s)
+  ep   5 train 0.1184 | val L1 0.0661 SSIM 0.6999 PSNR 21.18 obj 0.3662 (5s)
+[I 2026-10-04 14:01:07,824] Trial 0 finished with value: 0.3625522777438164 and parameters: {'lr': 0.001, 'batch_size': 32, 'latent_ch': 16, 'base_ch': 32, 'dropout': 0.0, 'alpha': 0.8}. Best is trial 0 with value: 0.3625522777438164.
+  ep   6 train 0.1170 | val L1 0.0646 SSIM 0.7020 PSNR 21.36 obj 0.3626 (7s)
+  ep   1 train 0.3748 | val L1 0.0926 SSIM 0.5650 PSNR 18.59 obj 0.5276 (9s)
+  ep   2 train 0.2096 | val L1 0.0733 SSIM 0.6672 PSNR 20.37 obj 0.4062 (10s)
+  ep   3 train 0.1818 | val L1 0.0665 SSIM 0.7113 PSNR 21.26 obj 0.3552 (10s)
+  ep   4 train 0.1702 | val L1 0.0669 SSIM 0.7262 PSNR 21.16 obj 0.3407 (9s)
+  ep   5 train 0.1630 | val L1 0.0644 SSIM 0.7340 PSNR 21.42 obj 0.3304 (10s)
+[I 2026-10-04 14:02:05,288] Trial 1 finished with value: 0.32487698271870613 and parameters: {'lr': 0.0003574712922600243, 'batch_size': 16, 'latent_ch': 32, 'base_ch': 64, 'dropout': 0.2497327922401265, 'alpha': 0.5955525998052242}. Best is trial 1 with value: 0.32487698271870613.
+  ep   6 train 0.1604 | val L1 0.0625 SSIM 0.7376 PSNR 21.66 obj 0.3249 (10s)
+  ep   1 train 0.3642 | val L1 0.1974 SSIM 0.3093 PSNR 12.64 obj 0.8881 (10s)
+  ep   2 train 0.2434 | val L1 0.1039 SSIM 0.5276 PSNR 17.50 obj 0.5764 (9s)
+  ep   3 train 0.1800 | val L1 0.0759 SSIM 0.6008 PSNR 19.99 obj 0.4751 (10s)
+  ep   4 train 0.1638 | val L1 0.0751 SSIM 0.6190 PSNR 20.11 obj 0.4561 (9s)
+  ep   5 train 0.1583 | val L1 0.0731 SSIM 0.6305 PSNR 20.26 obj 0.4426 (9s)
+[I 2026-10-04 14:03:02,550] Trial 2 finished with value: 0.4370753765106201 and parameters: {'lr': 0.00018559980846490597, 'batch_size': 64, 'latent_ch': 16, 'base_ch': 64, 'dropout': 0.05990213464750792, 'alpha': 0.7314054972861253}. Best is trial 1 with value: 0.32487698271870613.
+  ep   6 train 0.1566 | val L1 0.0711 SSIM 0.6340 PSNR 20.53 obj 0.4371 (9s)
+  ep   1 train 0.3248 | val L1 0.1845 SSIM 0.4215 PSNR 13.26 obj 0.7630 (9s)
+  ep   2 train 0.1774 | val L1 0.0874 SSIM 0.6177 PSNR 18.96 obj 0.4696 (9s)
+  ep   3 train 0.1551 | val L1 0.1217 SSIM 0.6023 PSNR 16.64 obj 0.5194 (8s)
+  ep   4 train 0.1442 | val L1 0.0720 SSIM 0.6788 PSNR 20.68 obj 0.3932 (8s)
+  ep   5 train 0.1383 | val L1 0.0671 SSIM 0.7000 PSNR 21.10 obj 0.3671 (8s)
+[I 2026-10-04 14:03:53,261] Trial 3 finished with value: 0.3581673875451088 and parameters: {'lr': 0.000750011895041699, 'batch_size': 32, 'latent_ch': 16, 'base_ch': 48, 'dropout': 0.036611470453433645, 'alpha': 0.7228296095500716}. Best is trial 1 with value: 0.32487698271870613.
+  ep   6 train 0.1342 | val L1 0.0641 SSIM 0.7059 PSNR 21.45 obj 0.3582 (9s)
+  ep   1 train 0.2568 | val L1 0.1253 SSIM 0.3686 PSNR 16.13 obj 0.7567 (6s)
+[I 2026-10-04 14:04:08,029] Trial 4 pruned. 
+  ep   2 train 0.1491 | val L1 0.0917 SSIM 0.4812 PSNR 18.49 obj 0.6105 (8s)
+  ep   1 train 0.2181 | val L1 0.1255 SSIM 0.3868 PSNR 16.05 obj 0.7387 (9s)
+[I 2026-10-04 14:04:37,071] Trial 5 pruned. 
+  ep   2 train 0.1193 | val L1 0.0846 SSIM 0.5199 PSNR 19.07 obj 0.5647 (9s)
+  ep   1 train 0.4575 | val L1 0.2236 SSIM 0.2965 PSNR 11.95 obj 0.9271 (9s)
+[I 2026-10-04 14:05:04,539] Trial 6 pruned. 
+  ep   2 train 0.3210 | val L1 0.1030 SSIM 0.5274 PSNR 17.67 obj 0.5756 (8s)
+  ep   1 train 0.3366 | val L1 0.1167 SSIM 0.4774 PSNR 16.45 obj 0.6392 (9s)
+[I 2026-10-04 14:05:32,015] Trial 7 pruned. 
+  ep   2 train 0.2029 | val L1 0.0835 SSIM 0.6014 PSNR 19.21 obj 0.4821 (8s)
+  ep   1 train 0.4802 | val L1 0.2313 SSIM 0.2866 PSNR 11.69 obj 0.9447 (6s)
+[I 2026-10-04 14:05:54,810] Trial 8 pruned. 
+  ep   2 train 0.4309 | val L1 0.2208 SSIM 0.2992 PSNR 12.05 obj 0.9216 (6s)
+  ep   1 train 0.3491 | val L1 0.1654 SSIM 0.3716 PSNR 13.57 obj 0.7938 (6s)
+[I 2026-10-04 14:06:17,408] Trial 9 pruned. 
+  ep   2 train 0.2211 | val L1 0.1431 SSIM 0.4845 PSNR 15.26 obj 0.6586 (6s)
+  ep   1 train 0.3768 | val L1 0.2311 SSIM 0.3029 PSNR 11.59 obj 0.9282 (10s)
+  ep   2 train 0.2119 | val L1 0.0758 SSIM 0.6110 PSNR 20.09 obj 0.4648 (10s)
+  ep   3 train 0.1795 | val L1 0.0721 SSIM 0.6471 PSNR 20.45 obj 0.4250 (9s)
+[I 2026-10-04 14:07:09,194] Trial 10 pruned. 
+  ep   4 train 0.1697 | val L1 0.0714 SSIM 0.6623 PSNR 20.61 obj 0.4091 (11s)
+  ep   1 train 0.2481 | val L1 0.1184 SSIM 0.4782 PSNR 16.51 obj 0.6402 (8s)
+[I 2026-10-04 14:07:36,752] Trial 11 pruned. 
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._optimization_history.plot_optimization_history is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._param_importances.plot_param_importances is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._parallel_coordinate.plot_parallel_coordinate is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+  ep   2 train 0.1398 | val L1 0.0853 SSIM 0.5846 PSNR 18.99 obj 0.5007 (8s)
+BEST: {
+  "trial": 1,
+  "objective": 0.32487698271870613,
+  "lr": 0.0003574712922600243,
+  "batch_size": 16,
+  "latent_ch": 32,
+  "base_ch": 64,
+  "dropout": 0.2497327922401265,
+  "alpha": 0.5955525998052242,
+  "val_psnr": 21.664003372192383,
+  "val_ssim": 0.7376128435134888,
+  "n_complete": 4,
+  "n_pruned": 8
+}

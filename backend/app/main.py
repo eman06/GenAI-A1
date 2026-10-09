@@ -129,13 +129,20 @@ async def corrupt_only(file: Optional[UploadFile] = File(None), sample: Optional
 
 @app.post("/api/restore/universal")
 async def restore_universal(file: Optional[UploadFile] = File(None), sample: Optional[str] = Form(None),
-                            corruption: str = Form("none"), level: int = Form(1), seed: int = Form(0)):
-    need("universal")
+                            corruption: str = Form("none"), level: int = Form(1), seed: int = Form(0),
+                            variant: str = Form("bottleneck")):
+    """variant='bottleneck': pure autoencoder (no skips); variant='skip': same network + one 64x64 skip (ablation)."""
+    if variant not in ("bottleneck", "skip"):
+        raise HTTPException(422, "variant must be 'bottleneck' or 'skip'")
+    key = "universal" if variant == "bottleneck" else "universal_skip"
+    need(key)
     img, meta = await read_image(file, sample)
     noisy, spec = corrupt(img, corruption, level, seed)
-    (out,), ms = REG.run("universal", {"input": to_nchw(noisy)})
+    (out,), ms = REG.run(key, {"input": to_nchw(noisy)})
+    name = ("Task 1 universal DAE (bottleneck only, no skips)" if variant == "bottleneck"
+            else "Task 1 universal DAE + one limited 64x64 skip (ablation)")
     return package(img, noisy, from_nchw(out), spec, meta, {"universal_dae": round(ms, 2), "total": round(ms, 2)},
-                   {"model": "Task 1 universal denoising autoencoder"})
+                   {"model": name, "variant": variant})
 
 
 @app.post("/api/restore/hard")

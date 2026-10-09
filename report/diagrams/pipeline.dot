@@ -1,0 +1,10 @@
+digraph G { rankdir=LR; compound=true; node [shape=box, style="rounded,filled", fontname="Helvetica", fontsize=10, fillcolor="#e8f1fb"]; edge [fontname="Helvetica", fontsize=8, color="#52514e"];
+subgraph cluster_data { label="Data (prepare_data.py, fs2k.py)"; style=rounded; color="#9aa0a6";
+  pets [label="Oxford-IIIT Pet\ntrainval 3,680 / test 3,669"]; split [label="80/20 split, seed 42\n2,944 / 736"]; man [label="val + test manifests\n(type, params, rects, seed)"]; rt [label="runtime corruption\n(DataLoader collate)"];
+  fs [label="FS2K official split\n+15% val (stratified)"]; }
+subgraph cluster_train { label="Training on Colab T4 (run_all.sh)"; style=rounded; color="#9aa0a6";
+  t1 [label="T1 universal DAE"]; t2 [label="T2 classifier\n+ 3 specialists"]; t3 [label="T3 soft MoE\n(init from T2)"]; t4 [label="T4 style cGAN"]; }
+subgraph cluster_track { label="Tracking"; style=rounded; color="#9aa0a6"; opt [label="Optuna (TPE + median\npruner, SQLite studies)"]; mlf [label="MLflow (params, curves,\nimages, checkpoints)"]; }
+onnx [label="ONNX export\n+ PyTorch/ORT check", fillcolor="#fff3b0"]; app [label="FastAPI + React app\n(Docker Compose)", fillcolor="#dff5e1"];
+pets -> split -> rt; split -> man; rt -> t1; rt -> t2; t2 -> t3; man -> t1 [style=dashed, label="val/test"]; fs -> t4;
+t1 -> onnx; t2 -> onnx; t3 -> onnx; t4 -> onnx; onnx -> app; t1 -> opt [style=dotted, dir=both]; t3 -> mlf [style=dotted]; }

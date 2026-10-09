@@ -28,7 +28,7 @@ export default function System() {
       {health && (
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           <Stat label="Status" value={health.status} hint={`uptime ${health.uptime_s}s`} />
-          <Stat label="Models loaded" value={`${health.models_loaded.length} / 7`}
+          <Stat label="Models loaded" value={`${health.models_loaded.length} / 8`}
             hint={Object.keys(health.models_missing).length ? `missing: ${Object.keys(health.models_missing).join(', ')}` : 'all present'} />
           <Stat label="ONNX Runtime" value={health.onnxruntime} hint={health.providers.join(', ')} />
           <Stat label="Python" value={health.python} hint={health.models_dir} />

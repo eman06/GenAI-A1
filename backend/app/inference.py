@@ -16,6 +16,7 @@ STYLES = ["Style 1", "Style 2", "Style 3"]
 
 MODEL_FILES = {
     "universal": "task1_universal_dae.onnx",
+    "universal_skip": "task1_universal_dae_skip.onnx",
     "classifier": "task2_classifier.onnx",
     "spec_salt_pepper": "task2_specialist_salt_pepper.onnx",
     "spec_blur": "task2_specialist_blur.onnx",

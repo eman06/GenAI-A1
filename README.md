@@ -4,7 +4,7 @@ Four generative models in one browser application:
 
 | Workspace | Task | Model |
 |---|---|---|
-| **Universal Restoration** | 1 | Convolutional denoising autoencoder with a 16×16×c bottleneck and no skip connections |
+| **Universal Restoration** | 1 | Convolutional denoising autoencoder with a 16×16×32 bottleneck and no skip connections (plus a limited-skip ablation variant, selectable in the app) |
 | **Hard-Routed Restoration** | 2 | CNN corruption classifier → one of three specialist autoencoders (identity bypass for clean inputs) |
 | **Soft Mixture-of-Experts Restoration** | 3 | Gate (initialised from the classifier) mixes identity + 3 specialists; jointly fine-tuned |
 | **Face-to-Sketch Generator** | 4 | Style-conditioned U-Net generator + PatchGAN discriminator (pix2pix-style cGAN) on FS2K |
@@ -20,7 +20,9 @@ Requirements: Docker Desktop (or Docker Engine + Compose v2).
 ```bash
 git clone https://github.com/eman06/GenAI-A1.git
 cd GenAI-A1
-# put the 7 ONNX files into ./models_onnx  (see "Model files" below)
+# download the trained models (8 ONNX files) and unzip them in the repo root -> creates models_onnx/
+curl -L -o models_onnx.zip https://github.com/eman06/GenAI-A1/releases/download/v1.2/models_onnx.zip
+unzip -o models_onnx.zip        # Windows PowerShell: Expand-Archive models_onnx.zip -DestinationPath . -Force
 docker compose up --build
 ```
 
@@ -29,11 +31,12 @@ If those ports are busy, run `FRONTEND_PORT=8088 BACKEND_PORT=8010 docker compos
 
 ### Model files
 
-The trained ONNX models are not committed to git. Download `models_onnx.zip` from **https://github.com/eman06/GenAI-A1/releases/download/v1.1/models_onnx.zip** and unzip it into `models_onnx/`:
+The trained ONNX models are not committed to git. Download `models_onnx.zip` from **https://github.com/eman06/GenAI-A1/releases/download/v1.2/models_onnx.zip** and unzip it in the repository root (it contains the `models_onnx/` folder):
 
 ```
 models_onnx/
   task1_universal_dae.onnx
+  task1_universal_dae_skip.onnx      (limited-skip ablation, optional)
   task2_classifier.onnx
   task2_specialist_salt_pepper.onnx
   task2_specialist_blur.onnx
@@ -60,7 +63,7 @@ The **System** page in the app (and `GET /api/health`) shows which models are lo
 | POST | `/api/sketch` | Task 4 (`style` = 0/1/2) |
 | POST | `/api/corrupt` | apply a corruption only |
 
-The restore endpoints take multipart form fields: `file` or `sample`, plus `corruption` (`none|clean|salt_pepper|blur|occlusion`), `level` (0–2) and `seed`.
+The restore endpoints take multipart form fields: `file` or `sample`, plus `corruption` (`none|clean|salt_pepper|blur|occlusion`), `level` (0–2) and `seed`. `/api/restore/universal` also accepts `variant` (`bottleneck` = submitted model, `skip` = limited-skip ablation).
 
 ---
 
@@ -90,8 +93,11 @@ python -m pytest tests -q                            # corruption-spec unit test
 ```
 
 * **Datasets:** Oxford-IIIT Pet is downloaded automatically by torchvision. FS2K comes from the official Google Drive link in the [FS2K repo](https://github.com/DengPingFan/FS2K) (`run_all.sh` downloads it with `gdown`).
-* **Optuna studies:** stored as SQLite files in `outputs/optuna/*.db`. Trial tables and plots are in `outputs/results/task*/`.
-* **MLflow:** view with `mlflow ui --backend-store-uri sqlite:///outputs/mlflow.db`. Parameters, per-epoch losses and metrics, sample image grids, checkpoints and result files are all logged.
+* **Optuna studies (results of our runs are committed):** `experiments/optuna/task1_udae.db`, `task2_classifier.db`, `task2_specialists.db`, `task3_moe.db`, `task4_cgan.db`. Trial tables, best parameters and Optuna plots are in `experiments/results/task*/`. Inspect a study with
+  `python -c "import optuna; s=optuna.load_study(study_name='task1_udae', storage='sqlite:///experiments/optuna/task1_udae.db'); print(s.best_trial)"`.
+* **MLflow (committed):** `experiments/mlflow/mlflow.db` holds all 61 runs (parameters, per-epoch losses/metrics, test metrics) of the four tasks. View it with
+  `mlflow ui --backend-store-uri sqlite:///experiments/mlflow/mlflow.db --port 5050`. Image/checkpoint artifacts were written on Colab; to browse them locally, copy the `outputs/mlruns` folder from the training run and run `python scripts/localize_mlflow.py <db> <mlruns-folder>`.
+* **Final configurations:** `configs/final_configs.json` (selected hyper-parameters of every model). All results (tables, figures, ONNX checks) are in `experiments/results/`; training logs in `experiments/logs/`.
 
 ## 3. Repository layout
 
@@ -104,6 +110,8 @@ manifests/        split.json, val/test corruption manifests, fs2k_split.json (de
 tests/            corruption specification tests
 backend/          FastAPI app + Dockerfile
 frontend/         React + Tailwind (Vite) app + nginx Dockerfile
+configs/          final selected hyper-parameters (final_configs.json)
+experiments/      Optuna studies (SQLite), MLflow tracking DB, result tables/figures, training logs
 report/           IEEE LaTeX report, figures, diagrams
 docker-compose.yml
 ```

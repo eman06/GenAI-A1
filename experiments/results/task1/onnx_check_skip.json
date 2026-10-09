@@ -1,0 +1,14 @@
+{
+  "onnx_path": "task1_universal_dae_skip.onnx",
+  "n_samples": 18,
+  "atol": 0.0001,
+  "outputs": [
+    {
+      "name": "output",
+      "max_abs_diff": 8.940696716308594e-07,
+      "mean_abs_diff": 6.622073556172836e-08,
+      "passed": true
+    }
+  ],
+  "passed": true
+}

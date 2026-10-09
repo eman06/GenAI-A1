@@ -1,0 +1,43 @@
+[I 2026-10-04 17:05:40,106] A new study created in RDB with name: task4_cgan
+  ep   1 D real 0.705 fake 0.706 | G adv 0.973 L1 0.3160 | val SSIM 0.4266 L1 0.1201 (14s)
+  ep   2 D real 0.540 fake 0.513 | G adv 1.313 L1 0.2372 | val SSIM 0.4458 L1 0.1141 (11s)
+  ep   3 D real 0.392 fake 0.360 | G adv 1.763 L1 0.2349 | val SSIM 0.4582 L1 0.1095 (11s)
+  ep   4 D real 0.320 fake 0.316 | G adv 2.078 L1 0.2349 | val SSIM 0.4529 L1 0.1093 (11s)
+  ep   5 D real 0.365 fake 0.332 | G adv 2.042 L1 0.2371 | val SSIM 0.4357 L1 0.1120 (12s)
+  ep   6 D real 0.372 fake 0.344 | G adv 1.792 L1 0.2357 | val SSIM 0.4285 L1 0.1140 (12s)
+  ep   7 D real 0.401 fake 0.353 | G adv 1.668 L1 0.2353 | val SSIM 0.4316 L1 0.1126 (12s)
+[I 2026-10-04 17:07:16,149] Trial 0 finished with value: 0.6512972488999367 and parameters: {'lr_g': 0.0002, 'lr_d': 0.0002, 'batch_size': 8, 'base_ch': 64, 'dropout': 0.5, 'emb_dim': 16, 'lambda_l1': 100.0}. Best is trial 0 with value: 0.6512972488999367.
+  ep   8 D real 0.376 fake 0.356 | G adv 1.607 L1 0.2330 | val SSIM 0.4427 L1 0.1093 (12s)
+  ep   1 D real 0.761 fake 0.749 | G adv 0.781 L1 0.2877 | val SSIM 0.4411 L1 0.1127 (19s)
+  ep   2 D real 0.714 fake 0.706 | G adv 0.731 L1 0.2345 | val SSIM 0.4585 L1 0.1105 (19s)
+  ep   3 D real 0.670 fake 0.646 | G adv 0.989 L1 0.2279 | val SSIM 0.4655 L1 0.1087 (19s)
+  ep   4 D real 0.533 fake 0.506 | G adv 1.529 L1 0.2264 | val SSIM 0.4772 L1 0.1070 (19s)
+  ep   5 D real 0.376 fake 0.416 | G adv 2.013 L1 0.2264 | val SSIM 0.4687 L1 0.1113 (19s)
+  ep   6 D real 0.469 fake 0.407 | G adv 1.780 L1 0.2283 | val SSIM 0.4591 L1 0.1092 (19s)
+  ep   7 D real 0.421 fake 0.392 | G adv 1.784 L1 0.2239 | val SSIM 0.4472 L1 0.1090 (19s)
+[I 2026-10-04 17:09:48,060] Trial 1 finished with value: 0.6298060640692711 and parameters: {'lr_g': 0.00011844319751820385, 'lr_d': 0.00042664981476167217, 'batch_size': 4, 'base_ch': 64, 'dropout': 0.3005575058716044, 'emb_dim': 32, 'lambda_l1': 121.06896936002164}. Best is trial 1 with value: 0.6298060640692711.
+  ep   8 D real 0.436 fake 0.390 | G adv 1.694 L1 0.2250 | val SSIM 0.4536 L1 0.1060 (19s)
+  ep   1 D real 0.677 fake 0.765 | G adv 0.719 L1 0.4373 | val SSIM 0.2937 L1 0.1358 (11s)
+  ep   2 D real 0.690 fake 0.665 | G adv 0.784 L1 0.2476 | val SSIM 0.4306 L1 0.1134 (11s)
+  ep   3 D real 0.632 fake 0.601 | G adv 0.868 L1 0.2316 | val SSIM 0.4459 L1 0.1084 (11s)
+  ep   4 D real 0.577 fake 0.549 | G adv 0.973 L1 0.2261 | val SSIM 0.4553 L1 0.1100 (11s)
+  ep   5 D real 0.563 fake 0.535 | G adv 1.036 L1 0.2208 | val SSIM 0.4621 L1 0.1056 (11s)
+  ep   6 D real 0.487 fake 0.454 | G adv 1.151 L1 0.2165 | val SSIM 0.4729 L1 0.1046 (11s)
+  ep   7 D real 0.432 fake 0.409 | G adv 1.249 L1 0.2135 | val SSIM 0.4674 L1 0.1044 (11s)
+[I 2026-10-04 17:11:20,931] Trial 2 finished with value: 0.6300038322806358 and parameters: {'lr_g': 8.152843673110742e-05, 'lr_d': 3.5909585479487027e-05, 'batch_size': 16, 'base_ch': 64, 'dropout': 0.06974693032602092, 'emb_dim': 32, 'lambda_l1': 105.0842133869176}. Best is trial 1 with value: 0.6298060640692711.
+  ep   8 D real 0.379 fake 0.367 | G adv 1.345 L1 0.2106 | val SSIM 0.4728 L1 0.1028 (11s)
+  ep   1 D real 0.547 fake 0.577 | G adv 1.197 L1 0.5231 | val SSIM 0.1543 L1 0.1880 (10s)
+  ep   2 D real 0.459 fake 0.417 | G adv 1.549 L1 0.2817 | val SSIM 0.4208 L1 0.1174 (10s)
+  ep   3 D real 0.432 fake 0.413 | G adv 1.479 L1 0.2393 | val SSIM 0.4498 L1 0.1115 (10s)
+  ep   4 D real 0.397 fake 0.383 | G adv 1.630 L1 0.2343 | val SSIM 0.4518 L1 0.1115 (10s)
+[I 2026-10-04 17:12:13,329] Trial 3 pruned. 
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._optimization_history.plot_optimization_history is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._param_importances.plot_param_importances is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/content/repo/scripts/task1_optuna.py:103: ExperimentalWarning: optuna.visualization.matplotlib._parallel_coordinate.plot_parallel_coordinate is experimental (supported from v2.2.0). The interface can change in the future.
+  ax = fn(study)
+/usr/local/lib/python3.13/dist-packages/optuna/visualization/matplotlib/_parallel_coordinate.py:165: UserWarning: Attempting to set identical low and high ylims makes transformation singular; automatically expanding.
+  ax2.set_ylim(dim.range[0], dim.range[1])
+  ep   5 D real 0.285 fake 0.286 | G adv 1.881 L1 0.2335 | val SSIM 0.4480 L1 0.1117 (10s)
+BEST: {'trial': 1, 'val_objective': 0.6298060640692711, 'lr_g': 0.00011844319751820385, 'lr_d': 0.00042664981476167217, 'batch_size': 4, 'base_ch': 64, 'dropout': 0.3005575058716044, 'emb_dim': 32, 'lambda_l1': 121.06896936002164, 'val_l1': 0.1070474311709404, 'val_ssim': 0.4772413671016693, 'n_complete': 3, 'n_pruned': 1}

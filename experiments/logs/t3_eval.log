@@ -1,0 +1,74 @@
+             in_psnr     psnr  in_ssim    ssim      l1
+type                                                  
+clean        50.0000  48.6903   1.0000  0.9978  0.0019
+salt_pepper  16.3833  26.9002   0.3820  0.8593  0.0335
+blur         27.8209  26.4342   0.8136  0.8241  0.0352
+occlusion    13.5734  22.0326   0.7078  0.7582  0.0485
+overall      22.3333  27.4791   0.6710  0.8322  0.0354
+                      in_psnr     psnr  in_ssim    ssim      l1
+type        severity                                           
+clean       none      50.0000  48.6903   1.0000  0.9978  0.0019
+salt_pepper low       20.1332  27.1103   0.6022  0.8673  0.0326
+            medium    15.8749  26.9200   0.3396  0.8607  0.0334
+            high      13.1419  26.6704   0.2042  0.8498  0.0344
+blur        low       32.3359  27.2764   0.9436  0.8699  0.0322
+            medium    26.7735  27.0911   0.8057  0.8541  0.0328
+            high      24.3532  24.9350   0.6916  0.7482  0.0406
+occlusion   low       16.7027  23.6775   0.8619  0.8427  0.0376
+            medium    13.2681  22.1762   0.7260  0.7543  0.0482
+            high      10.7494  20.2441   0.5356  0.6774  0.0598
+{
+  "mean_weight": {
+    "identity": 0.1431,
+    "salt_pepper": 0.2949,
+    "blur": 0.2821,
+    "occlusion": 0.2799
+  },
+  "top1_share": {
+    "identity": 0.10932134096484056,
+    "salt_pepper": 0.3,
+    "blur": 0.3009811937857727,
+    "occlusion": 0.2896974652493868
+  },
+  "route_acc_top1": 0.9881439084219134,
+  "inactive_branches(<2% mean weight)": [],
+  "off_target_weight_by_true_class": {
+    "clean": 0.05910346434373204,
+    "salt_pepper": 0.02594027159551271,
+    "blur": 0.07993011992515087,
+    "occlusion": 0.08826641102675203
+  },
+  "share_dominated(w_max>0.9)": 0.8831016625783592,
+  "share_distributed(w_max<0.6)": 0.016135186699373125
+}
+                              clean PSNR  salt_pepper PSNR  blur PSNR  occlusion PSNR  clean SSIM  salt_pepper SSIM  blur SSIM  occlusion SSIM  overall PSNR  overall SSIM
+Soft MoE (T3)                     48.690            26.900     26.434          22.033       0.998             0.859      0.824           0.758        27.479         0.832
+Universal DAE (T1)                23.287            23.156     22.768          20.290       0.849             0.834      0.791           0.734        22.193         0.792
+Hard routing, predicted (T2)      49.826            26.706     26.104          22.112       0.998             0.850      0.815           0.738        27.459         0.821
+Hard routing, oracle (T2)         50.000            26.706     26.102          22.124       1.000             0.850      0.815           0.737        27.479         0.821
+mixed blur+s&p: {
+ "input": {
+  "psnr": 15.454049110412598,
+  "ssim": 0.244352325797081
+ },
+ "hard_routed": {
+  "psnr": 24.6084041595459,
+  "ssim": 0.759123682975769
+ },
+ "soft_moe": {
+  "psnr": 24.739036560058594,
+  "ssim": 0.7650885581970215
+ },
+ "soft_moe_mean_w": [
+  0.00800077524036169,
+  0.9862006902694702,
+  0.0036053406074643135,
+  0.0021931729279458523
+ ],
+ "hard_route_counts": {
+  "clean": 0,
+  "salt_pepper": 500,
+  "blur": 0,
+  "occlusion": 0
+ }
+}

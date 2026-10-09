@@ -49,7 +49,7 @@ export default function App() {
         </ul>
         <div className="mt-6 hidden items-center gap-2 rounded-xl bg-ink-800/60 px-3 py-2 text-xs text-slate-300 lg:flex">
           <span className={`h-2 w-2 rounded-full ${dot}`} />
-          API {health?.status || '…'} · {health?.models_loaded?.length ?? 0}/7 models
+          API {health?.status || '…'} · {health?.models_loaded?.length ?? 0}/8 models
         </div>
       </nav>
       <main className="flex-1 p-4 sm:p-8">
