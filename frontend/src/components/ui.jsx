@@ -65,14 +65,14 @@ export function Bars({ title, values, highlight, truth }) {
 }
 
 /** Upload a file, pick a bundled sample, or (optionally) capture from the webcam. */
-export function ImageSource({ value, onChange, allowWebcam = false }) {
+export function ImageSource({ value, onChange, allowWebcam = false, samplePrefix = '' }) {
   const [samples, setSamples] = useState([])
   const [cam, setCam] = useState(false)
   const videoRef = useRef(null)
   const streamRef = useRef(null)
 
   useEffect(() => {
-    getJSON('/api/samples').then((r) => setSamples(r.samples)).catch(() => {})
+    getJSON('/api/samples').then((r) => setSamples(r.samples.filter((n) => n.startsWith(samplePrefix)))).catch(() => {})
     return () => stopCam()
   }, [])
 

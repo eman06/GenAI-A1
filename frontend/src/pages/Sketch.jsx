@@ -8,6 +8,7 @@ export default function Sketch() {
   const [src, setSrc] = useState(null)
   const [style, setStyle] = useState(0)
   const [res, setRes] = useState(null)
+  const [all, setAll] = useState(null)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
 
@@ -16,6 +17,21 @@ export default function Sketch() {
     setError('')
     try {
       setRes(await postForm('/api/sketch', { file: src?.file, sample: src?.sample, style }))
+    } catch (e) {
+      setError(e.message)
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  async function runAll() {
+    setBusy(true)
+    setError('')
+    try {
+      const out = []
+      for (let s = 0; s < 3; s++) out.push(await postForm('/api/sketch', { file: src?.file, sample: src?.sample, style: s }))
+      setAll(out)
+      setRes(out[style])
     } catch (e) {
       setError(e.message)
     } finally {
@@ -34,7 +50,7 @@ export default function Sketch() {
       </header>
       <div className="grid gap-6 xl:grid-cols-[320px_1fr]">
         <aside className="flex flex-col gap-4">
-          <ImageSource value={src} onChange={setSrc} allowWebcam />
+          <ImageSource value={src} onChange={(v) => { setSrc(v); setAll(null) }} allowWebcam samplePrefix="face" />
           <div className="card flex flex-col gap-3">
             <div className="label">2 · Sketch style</div>
             <div className="grid grid-cols-3 gap-2">
@@ -49,11 +65,14 @@ export default function Sketch() {
           <button className="btn-primary py-3" disabled={!src || busy} onClick={run}>
             {busy ? 'Generating…' : 'Generate sketch'}
           </button>
+          <button className="btn-ghost" disabled={!src || busy} onClick={runAll}>
+            Compare all 3 styles
+          </button>
           <ErrorBox error={error} />
         </aside>
         <section className="flex flex-col gap-6">
           <div className="grid gap-4 sm:grid-cols-2">
-            <ImagePanel title="Photograph (128×128 model input)" src={res?.images.photo} empty="Upload or capture a face photo" />
+            <ImagePanel title="Photograph (128×128 model input)" src={res?.images.photo} empty="Upload, capture or pick a face photo" />
             <ImagePanel title={`Generated sketch${res ? ` · ${res.style}` : ''}`} src={res?.images.sketch}
               onDownload={res && dl(res.images.sketch, `sketch_${res.style.replace(' ', '').toLowerCase()}.png`)} />
           </div>
@@ -62,6 +81,22 @@ export default function Sketch() {
               <Stat label="Inference time" value={`${res.timing_ms.total.toFixed(1)} ms`} hint="ONNX Runtime, CPU" />
               <Stat label="Style condition" value={res.style} hint="learned categorical embedding" />
               <Stat label="Original size" value={res.input.original_size.join('×')} hint="resized to 128×128" />
+            </div>
+          )}
+          {all && (
+            <div className="card">
+              <div className="label mb-3">Style comparison: same photo, three style conditions</div>
+              <div className="grid grid-cols-3 gap-4">
+                {all.map((r) => (
+                  <div key={r.style} className="flex flex-col gap-2">
+                    <img src={r.images.sketch} alt={r.style} className="pixelated aspect-square w-full rounded-xl bg-white" />
+                    <div className="flex items-center justify-between text-sm text-slate-300">
+                      {r.style}
+                      <button className="text-xs font-semibold text-accent-400" onClick={dl(r.images.sketch, `sketch_${r.style.replace(' ', '').toLowerCase()}.png`)}>Download</button>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           )}
         </section>

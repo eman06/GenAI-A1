@@ -28,7 +28,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen lg:flex">
-      <nav className="border-b border-white/10 bg-ink-900/90 p-4 lg:sticky lg:top-0 lg:h-screen lg:w-72 lg:shrink-0 lg:border-b-0 lg:border-r">
+      <nav className="border-b border-white/10 bg-ink-900/90 p-4 lg:sticky lg:top-0 lg:h-screen lg:min-h-screen lg:self-start lg:w-72 lg:shrink-0 lg:border-b-0 lg:border-r">
         <div className="mb-6 flex items-center gap-3 px-2">
           <div className="grid h-9 w-9 place-items-center rounded-xl bg-accent-500 font-bold text-ink-950">R</div>
           <div>

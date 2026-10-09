@@ -70,7 +70,7 @@ export default function Restoration({ mode }) {
 
       <div className="grid gap-6 xl:grid-cols-[320px_1fr]">
         <aside className="flex flex-col gap-4">
-          <ImageSource value={src} onChange={setSrc} />
+          <ImageSource value={src} onChange={setSrc} samplePrefix="pet" />
           <div className="card flex flex-col gap-3">
             <div className="label">2 · Runtime corruption</div>
             <select className="select" value={corruption} onChange={(e) => setCorruption(e.target.value)}>

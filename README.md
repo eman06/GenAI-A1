@@ -29,7 +29,7 @@ If those ports are busy, run `FRONTEND_PORT=8088 BACKEND_PORT=8010 docker compos
 
 ### Model files
 
-The trained ONNX models are not committed to git. Download `models_onnx.zip` from **https://github.com/eman06/GenAI-A1/releases/download/v1.0/models_onnx.zip** and unzip it into `models_onnx/`:
+The trained ONNX models are not committed to git. Download `models_onnx.zip` from **https://github.com/eman06/GenAI-A1/releases/download/v1.1/models_onnx.zip** and unzip it into `models_onnx/`:
 
 ```
 models_onnx/
