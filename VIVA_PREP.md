@@ -164,7 +164,7 @@ Macro-F1 averages F1 over the 4 classes equally, so a weak class can't hide behi
 
 **Training:**
 1. **Warm-up** (2 epochs): experts frozen, gate only, lr 1e-3.
-2. **Joint fine-tuning** (12 epochs): everything unfrozen, lr **3.6e-5** (28× smaller, so the pretrained experts aren't destroyed), cosine schedule, batch 32. The experts' BatchNorm statistics are kept frozen (standard practice when fine-tuning).
+2. **Joint fine-tuning** (10 epochs; 12 epochs in total with warm-up): everything unfrozen, lr **3.6e-5** (28× smaller, so the pretrained experts aren't destroyed), cosine schedule, batch 32. The experts' BatchNorm statistics are kept frozen (standard practice when fine-tuning).
 
 **Loss:** `λ₁·L1 + (1−λ₁)·(1−SSIM) + λ_c·CE(gate logits, label) + λ_b·Σ_k (w̄_k − ¼)²`
 - **CE** keeps the gate meaningful: it must still recognise the corruption.

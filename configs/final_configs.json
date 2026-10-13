@@ -74,7 +74,7 @@
     "n_pruned": 2,
     "lr_gate_warmup": 0.001,
     "warmup_epochs": 2,
-    "joint_epochs": 12,
+    "joint_epochs": 10,
     "batch_size": 32
   },
   "task4_cgan": {
